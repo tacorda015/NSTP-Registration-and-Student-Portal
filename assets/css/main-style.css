@@ -1,0 +1,7000 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,
+body {
+  background-color: #e5f1f9;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  /* width: 100vw; */
+}
+
+ol,
+ul {
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0 !important;
+}
+.form-control {
+  background-color: #e5f1f9 !important;
+}
+
+.grouplist-container .search-container span.search-icon,
+.modulelist-container .search-container span.search-icon,
+.module-container .search-container span.search-icon,
+.studentlist-container .search-container span.search-icon,
+.teacherlist-container .search-container span.search-icon,
+.trainerlist-container .search-container span.search-icon,
+.groupview-container .search-container span.search-icon,
+.imports-container .search-container span.search-icon,
+.announcement-container .search-container span.search-icon,
+.announce-container .search-container span.search-icon,
+.announcelist-container .search-container span.search-icon,
+.studentList-container .search-container .search-icons,
+/* .studentgroup-container .search-container span.search-icon, */
+.attendance-container .search-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../img/xIcon2.png);
+}
+
+/*--------------------------------------------------------------
+# Home Main Container
+--------------------------------------------------------------*/
+.home-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  left: 6.25rem;
+  top: 4rem;
+  margin: 1rem;
+  width: calc(100vw - 8.25rem);
+  height: calc(100% - 4rem);
+}
+
+/*--------------------------------------------------------------
+# Side Bar
+--------------------------------------------------------------*/
+.sidebar {
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  height: 100%;
+  width: 270px;
+  z-index: 100;
+  transition: all 0.5s ease;
+  background-color: #c5e2f2;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 3px 1px 5px 0px rgba(0, 0, 0, 0.44);
+}
+
+.sidebar .logo-details img {
+  width: 4rem;
+  height: auto;
+}
+
+.sidebar.close {
+  width: 100px;
+  height: 100%;
+  overflow-x: scroll;
+}
+.sidebar.close::-webkit-scrollbar {
+  display: none;
+}
+.sidebar .logo-details {
+  margin-top: 10px;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar .logo-details .logo_name {
+  font-size: 22px;
+  color: #132c3e;
+  font-weight: 600;
+  transition: 0.3s ease;
+  transition-delay: 0.1s;
+}
+
+.sidebar.close .logo-details .logo_name {
+  transition-delay: 0s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar .nav-links {
+  height: calc(100% - 90px);
+  margin: 30px 0 0 0;
+  overflow: auto;
+}
+
+.sidebar.close .nav-links {
+  overflow: visible;
+}
+
+.sidebar .nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar .nav-links li {
+  position: relative;
+  list-style: none;
+  transition: all 0.4s ease;
+  margin: 10px 0;
+}
+
+.sidebar .nav-links li:hover {
+  background: #afd3e2;
+}
+
+.sidebar .nav-links li .iocn-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar.close .nav-links li .iocn-link {
+  display: block;
+}
+
+.sidebar .nav-links li i {
+  height: 40px;
+  min-width: 70px;
+  text-align: center;
+  line-height: 50px;
+  color: #132c3e;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar .nav-links li.showMenu i.arrow {
+  transform: rotate(-180deg);
+}
+
+.sidebar.close .nav-links i.arrow {
+  display: none;
+}
+
+.sidebar .nav-links li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.sidebar .nav-links li a .link_name {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #132c3e;
+  transition: all 0.4s ease;
+}
+
+.sidebar.close .nav-links li a .link_name {
+  /* opacity: 0; */
+  pointer-events: none;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sidebar.close .nav-links li a {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .nav-links li .sub-menu {
+  padding: 6px 6px 14px 20px;
+  margin-top: -10px;
+  background: #afd3e2;
+  display: none;
+}
+
+.sidebar .nav-links li.showMenu .sub-menu {
+  display: block;
+}
+
+.sidebar .nav-links li .sub-menu a {
+  color: #132c3e;
+  font-size: 15px;
+  padding: 5px 0;
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li .sub-menu a:hover {
+  opacity: 1;
+}
+
+.sidebar.close .nav-links li .sub-menu {
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  margin-top: 0;
+  padding: 10px 20px;
+  border-radius: 0 6px 6px 0;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+  transition: 0s;
+}
+
+.sidebar.close .nav-links li:hover .sub-menu {
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li .sub-menu .link_name {
+  display: none;
+}
+
+.sidebar.close .nav-links li .sub-menu .link_name {
+  font-size: 18px;
+  opacity: 1;
+  display: block;
+}
+
+.sidebar .nav-links li .sub-menu.blank {
+  opacity: 1;
+  pointer-events: auto;
+  padding: 3px 20px 6px 16px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar .nav-links li:hover .sub-menu.blank {
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .sidebar .logo-details img {
+    width: 3.5rem;
+  }
+  .sidebar.close {
+    width: 100px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar.close .nav-links li .sub-menu,
+  .sidebar.close .nav-links li,
+  .sidebar.close .logo-details img {
+    display: none;
+  }
+
+  .sidebar {
+    width: 270px;
+  }
+  .sidebar.close {
+    width: 0;
+  }
+  .wrapper .home-section {
+    margin-left: 0;
+  }
+  .sidebar.close ~ .home-section {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Pulsing of Message Nitification
+--------------------------------------------------------------*/
+.pulsing-div {
+  border-radius: 50%;
+  background: red;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*--------------------------------------------------------------
+# Loader Sending Email
+--------------------------------------------------------------*/
+.loader-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as desired */
+  z-index: 9998;
+}
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  border: 3px solid rgba(0, 102, 255, 0.1);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 150px;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: #0066ff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px #0066ff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.loader::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top: 3px solid #0066ff;
+  border-right: 3px solid #0066ff;
+  border-radius: 50%;
+  animation: animateC 2s linear infinite;
+}
+.loader span {
+  display: block;
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background: transparent;
+  transform-origin: left;
+  animation: animate 2s linear infinite;
+}
+
+.loader span::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #00aeff;
+  top: -6px;
+  right: -8px;
+  box-shadow: 0 0 20px 5px #0066ff;
+}
+
+@keyframes animateC {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(45deg);
+  }
+
+  100% {
+    transform: rotate(405deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Home Section
+--------------------------------------------------------------*/
+
+.home-section {
+  flex-grow: 1;
+  /* background: #f2f9fd; */
+  background: #e5f1f9;
+  transition: margin-left 0.5s ease;
+}
+
+.home-section .home-content {
+  width: 100%;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #c5e2f2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+.home-section .home-content .bx-menu {
+  color: #132c3e;
+  font-size: 35px;
+  cursor: pointer;
+  z-index: 100;
+  background-color: #c5e2f2;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add box-shadow property */
+}
+
+.home-section .home-content .bx-menu:hover {
+  background: #e5f1f9;
+  transform: translateY(-2px);
+  /* color: #c5e2f2; */
+}
+.home-section .home-content .bx-menu:active {
+  transform: translateY(2px);
+}
+.home-content .profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.home-content .profile .pro-file {
+  cursor: pointer;
+}
+
+.home-content .profile h3 {
+  /* font-size: 1.2rem !important; */
+  text-align: end;
+  font-weight: 500;
+  line-height: 1rem;
+  color: #132c3e;
+}
+
+.home-content .profile h3 span {
+  font-size: 0.75rem;
+  color: #1c445e;
+}
+
+.home-content .profile .imgPro {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-color: #e5f1f9;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #1d5e87;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+.home-content .profile .imgPro:hover {
+  transform: translateY(-1px);
+}
+.home-content .profile .imgPro:active {
+  transform: translateY(1px);
+}
+.home-content .profile .imgPro img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: auto;
+}
+
+.home-content .menu {
+  position: absolute;
+  width: 200px;
+  right: 10px;
+  top: calc(100% + 10px);
+  min-height: 100px;
+  background: rgb(197, 226, 242);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  box-shadow: 0 10px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  z-index: 10;
+}
+
+.home-content .menu::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 27px;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(197, 226, 242, 1) 0%,
+    rgba(159, 208, 234, 1) 50%,
+    rgba(88, 174, 216, 1) 100%
+  );
+  transform: rotate(45deg);
+}
+
+.home-content .menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.home-content .menu ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  background: #c5e2f2;
+  border-radius: 15px;
+}
+
+.home-content .menu ul li {
+  list-style: none;
+  padding: 15px 20px;
+  transition: 0.5s;
+}
+
+.home-content .menu ul li:hover {
+  background: #58aed8;
+  border-radius: 8px;
+}
+
+.home-content .menu ul li a {
+  text-decoration: none;
+  color: #132c3e;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-content .menu ul li a .bx {
+  font-size: 1.25rem;
+  color: #132c3e;
+}
+
+.home-content .menu ul li a .bx:hover,
+.home-content .menu ul li a:hover {
+  color: #c5e2f2;
+}
+
+/*--------------------------------------------------------------
+# Admindash Board
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Admin grouplist.php
+--------------------------------------------------------------*/
+
+.grouplist-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  /* max-height: 365px; */
+  max-height: 64%;
+  overflow-y: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  scroll-behavior: smooth;
+}
+
+.grouplist-container .table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.grouplist-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.grouplist-container .responsive-table th,
+.grouplist-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.grouplist-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.grouplist-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.grouplist-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.grouplist-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.grouplist-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.grouplist-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.grouplist-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.grouplist-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.grouplist-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  height: fit-content;
+}
+.grouplist-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.grouplist-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.grouplist-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.grouplist-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.grouplist-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.grouplist-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 0.5rem;
+}
+.grouplist-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .grouplist-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  /* .grouplist-container .table-container {
+    max-height: 365px;
+  } */
+
+  .grouplist-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .grouplist-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .grouplist-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .grouplist-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+  .grouplist-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .grouplist-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .grouplist-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .grouplist-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .grouplist-container .title1-container {
+    flex-direction: column;
+  }
+  .grouplist-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home-main-container {
+    left: 0;
+    width: 100%;
+  }
+
+  .grouplist-container .header-container {
+    gap: 12px;
+  }
+  .grouplist-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  /* .grouplist-container .table-container {
+    max-height: 55vh;
+  } */
+  .grouplist-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .grouplist-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .grouplist-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .grouplist-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .grouplist-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+
+  .grouplist-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .grouplist-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .grouplist-container .title-container {
+    margin: 1rem;
+  }
+
+  .grouplist-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .grouplist-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .grouplist-container .title1-container {
+    flex-direction: column;
+  }
+  .grouplist-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+/*--------------------------------------------------------------
+# Admin profile.php
+--------------------------------------------------------------*/
+
+.profile-container {
+  width: 90%;
+  height: calc(90vh - 4rem);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.minisidebar {
+  flex: 0 0 30%;
+  background-image: linear-gradient(
+    180deg,
+    rgb(197, 226, 242),
+    rgb(88, 174, 216),
+    rgb(34, 119, 167)
+  );
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 1rem;
+  border-radius: 15px 0 0 15px;
+  border-right: 1px solid #2277a7;
+}
+.minisidebar h5 {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.profilepic-container {
+  display: flex;
+  margin: 10px 0 20px;
+}
+
+.my-icon {
+  position: absolute;
+  font-size: 20px;
+  color: black;
+  bottom: 0;
+  right: 0;
+}
+.inputContainer label {
+  width: 40%;
+  font-weight: 600;
+}
+.insideform {
+  width: 100%;
+  display: flex;
+  border-radius: 15px;
+  border: 1px solid #2277a7;
+}
+.minicontent {
+  flex: 1;
+  overflow-x: hidden;
+}
+.minicontent::-webkit-scrollbar {
+  display: none;
+}
+
+.profilepic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.picture-container {
+  position: relative;
+}
+
+.holder {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  row-gap: 20px;
+  column-gap: 15px;
+  justify-content: center;
+}
+
+.inputContainer {
+  box-sizing: border-box;
+  width: calc(100% - 48px);
+  align-items: center;
+  margin: 0 24px;
+  padding: 12px 0;
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid #58aed8;
+}
+.inputContainer .span-container {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.inputContainer span {
+  flex: 1;
+}
+.icon-container .fa-solid,
+.icon-container .fas {
+  font-weight: 900;
+  font-size: 20px;
+}
+.passwordInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.inputContainer .span-container input {
+  padding: 10px;
+  font-size: 16px;
+  background: #e5f1f9;
+  border-radius: 10px;
+  border: 1px solid #58aed8;
+  outline: none;
+  box-sizing: border-box;
+  text-indent: 10px;
+}
+.icon-container {
+  display: flex;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+  .insideform {
+    flex-direction: column;
+    width: 100%;
+  }
+  .minisidebar {
+    /* flex: 0 0 10%; */
+    border-radius: 15px 15px 0 0;
+    border: none;
+    flex-direction: row;
+    padding-left: 1.5rem;
+    flex-wrap: wrap;
+    /* gap: 2rem; */
+  }
+  .minisidebar h5 {
+    padding: 10px 10px 20px;
+  }
+  .inputContainer label {
+    min-width: 200px;
+    /* word-wrap: none; */
+  }
+  .inputContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .inputContainer span {
+    min-width: 150px;
+  }
+}
+/*--------------------------------------------------------------
+# Admin studentlist.php
+--------------------------------------------------------------*/
+
+.studentlist-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.studentlist-container .table-container::-webkit-scrollbar {
+  /* display: none; */
+}
+
+.studentlist-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.studentlist-container .responsive-table th,
+.studentlist-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.studentlist-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.studentlist-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.studentlist-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.studentlist-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.studentlist-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.studentlist-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.studentlist-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.studentlist-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.studentlist-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.studentlist-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.studentlist-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.studentlist-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.studentlist-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.studentlist-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.studentlist-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 0.5rem;
+}
+.studentlist-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .studentlist-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .studentlist-container .table-container {
+    max-height: 365px;
+  }
+
+  .studentlist-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .studentlist-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .studentlist-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .studentlist-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+  .studentlist-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .studentlist-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .studentlist-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .studentlist-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .studentlist-container .title1-container {
+    flex-direction: column;
+  }
+  .studentlist-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .studentlist-container .header-container {
+    gap: 12px;
+  }
+  .studentlist-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .studentlist-container .table-container {
+    max-height: 55vh;
+  }
+  .studentlist-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .studentlist-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .studentlist-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .studentlist-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .studentlist-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+
+  .studentlist-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .studentlist-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .studentlist-container .title-container {
+    margin: 1rem;
+  }
+
+  .studentlist-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .studentlist-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .studentlist-container .title1-container {
+    flex-direction: column;
+  }
+  .studentlist-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+/*--------------------------------------------------------------
+# Admin groupview.php
+--------------------------------------------------------------*/
+
+.groupview-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.groupview-container .table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.groupview-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.groupview-container .responsive-table th,
+.groupview-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.groupview-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.groupview-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.groupview-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.groupview-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.groupview-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.groupview-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.groupview-container {
+  width: 100%;
+  height: 90%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 2rem 2rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.groupview-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.groupview-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.groupview-container .header-container .title-containers {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+/* .groupview-container .header-container .title-containers:last-child {
+  flex-direction: row-reverse;
+} */
+.groupview-container .header-container {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.groupview-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.groupview-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.groupview-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.groupview-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.groupview-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+.groupview-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  /* padding-bottom: 1rem; */
+}
+.groupview-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .groupview-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .groupview-container .table-container {
+    max-height: 365px;
+  }
+
+  .groupview-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .groupview-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .groupview-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .groupview-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+  .groupview-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .groupview-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .groupview-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .groupview-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .groupview-container .title1-container {
+    flex-direction: column;
+  }
+  .groupview-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .groupview-container
+    .header-container
+    .title-containers
+    .titles-container
+    h2 {
+    font-size: 1.2rem;
+  }
+  .groupview-container
+    .header-container
+    .title-containers
+    .titles-container
+    label {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .groupview-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .groupview-container .table-container {
+    max-height: 45vh;
+  }
+  .groupview-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .groupview-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .groupview-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .groupview-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .groupview-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+
+  .groupview-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .groupview-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .groupview-container .title-container {
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  .groupview-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .groupview-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .groupview-container .title1-container {
+    flex-direction: column;
+  }
+  .groupview-container .action-btn {
+    justify-content: flex-end;
+  }
+  .inchargesperson {
+    width: inherit;
+  }
+}
+/*--------------------------------------------------------------
+# Mapping listlocation.php
+--------------------------------------------------------------*/
+
+.mapboxgl-popup-close-button {
+  font-size: 20px;
+  top: 5px;
+  right: 5px;
+}
+.mapboxgl-popup-content p {
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+.location-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.location-container .table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.location-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.location-container .responsive-table th,
+.location-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.location-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.location-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.location-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.location-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.location-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.location-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.location-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.location-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.location-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.location-container .header-container .title-containers {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.location-container .header-container .title-containers:last-child {
+  flex-direction: row-reverse;
+}
+.location-container .header-container {
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.location-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.location-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.location-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.location-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.location-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+.location-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 1rem;
+}
+.location-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .location-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .location-container .table-container {
+    max-height: 365px;
+  }
+
+  .location-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .location-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .location-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .location-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+  .location-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .location-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .location-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .location-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .location-container .title1-container {
+    flex-direction: column;
+  }
+  .location-container .action-btn {
+    justify-content: flex-end;
+  }
+  #map {
+    height: 60%;
+    width: 100%;
+  }
+  .location-table {
+    border-collapse: collapse;
+    max-height: 40%;
+    overflow-y: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .location-container .header-container .title-containers .titles-container h2 {
+    font-size: 1.2rem;
+  }
+  .location-container
+    .header-container
+    .title-containers
+    .titles-container
+    label {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  .location-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .location-container .table-container {
+    max-height: 45vh;
+  }
+  .location-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .location-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .location-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .location-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .location-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+
+  .location-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .location-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .location-container .title-container {
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  .location-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .location-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .location-container .title1-container {
+    flex-direction: column;
+  }
+  .location-container .action-btn {
+    justify-content: flex-end;
+  }
+  .marker-button {
+    margin: 10px 0;
+    position: absolute;
+    top: 4rem !important;
+    left: 2rem !important;
+    /* z-index: 1; */
+    padding: 10px;
+  }
+  #map {
+    height: 60%;
+    width: 100%;
+  }
+  .location-table {
+    border-collapse: collapse;
+    max-height: 40%;
+    overflow-y: auto;
+  }
+}
+.location-table {
+  border-collapse: collapse;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+#map {
+  height: 100% !important;
+  width: 100%;
+}
+.marker-button {
+  margin: 10px 0;
+  position: absolute;
+  top: 6rem;
+  left: 2.6rem;
+  /* z-index: 1; */
+  padding: 10px;
+}
+
+path {
+  fill: #30a2ff;
+}
+
+.location-table th,
+.location-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.location-table th {
+  background-color: #f2f2f2;
+}
+
+.location-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.mapboxgl-ctrl-geocoder input[type='text'] {
+  padding: 6px 35px !important;
+  background-color: transparent;
+}
+.instructions-container::-webkit-scrollbar {
+  display: none;
+}
+
+.instructions-container p {
+  margin: 0;
+  padding: 5px 0;
+}
+#instructions {
+  font-weight: 500;
+}
+
+.instructions-container.minimized {
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.intruc {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  margin-top: 10px;
+}
+
+.instructions-container {
+  position: relative;
+  z-index: 1;
+  background-color: #fff6b8;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-left: 10px;
+}
+
+.toggle-instructions-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 2;
+  display: block;
+  transition: all 0.3s ease; /* Add a transition for smooth movement */
+}
+
+.toggle-instructions-button.left {
+  right: auto;
+  left: 10px;
+}
+
+.instructions-container.minimized .instructions-content {
+  display: none;
+}
+
+.instructions-container.minimized .toggle-instructions-button {
+  top: 10px;
+  left: 10px;
+}
+
+.instructions-content {
+  display: block;
+}
+.mapboxgl-ctrl-geocoder--icon {
+  top: 10px;
+}
+
+/*--------------------------------------------------------------
+# Admin teacherlist.php
+--------------------------------------------------------------*/
+
+.teacherlist-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.teacherlist-container .table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.teacherlist-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.teacherlist-container .responsive-table th,
+.teacherlist-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.teacherlist-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.teacherlist-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.teacherlist-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.teacherlist-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.teacherlist-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.teacherlist-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.teacherlist-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.teacherlist-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.teacherlist-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.teacherlist-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.teacherlist-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.teacherlist-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.teacherlist-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.teacherlist-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.teacherlist-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 0.5rem;
+}
+.teacherlist-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .teacherlist-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .teacherlist-container .table-container {
+    max-height: 365px;
+  }
+
+  .teacherlist-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .teacherlist-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .teacherlist-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .teacherlist-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+  .teacherlist-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .teacherlist-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .teacherlist-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .teacherlist-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .teacherlist-container .title1-container {
+    flex-direction: column;
+  }
+  .teacherlist-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .teacherlist-container .header-container {
+    gap: 12px;
+  }
+  .teacherlist-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .teacherlist-container .table-container {
+    max-height: 55vh;
+  }
+  .teacherlist-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .teacherlist-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .teacherlist-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .teacherlist-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .teacherlist-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+
+  .teacherlist-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .teacherlist-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .teacherlist-container .title-container {
+    margin: 1rem;
+  }
+
+  .teacherlist-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .teacherlist-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .teacherlist-container .title1-container {
+    flex-direction: column;
+  }
+  .teacherlist-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+/*--------------------------------------------------------------
+# Admin trainerlist.php
+--------------------------------------------------------------*/
+
+.trainerlist-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.trainerlist-container .table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.trainerlist-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.trainerlist-container .responsive-table th,
+.trainerlist-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.trainerlist-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.trainerlist-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.trainerlist-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.trainerlist-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.trainerlist-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.trainerlist-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.trainerlist-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.trainerlist-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.trainerlist-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.trainerlist-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.trainerlist-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.trainerlist-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.trainerlist-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.trainerlist-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.trainerlist-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 1rem;
+}
+.trainerlist-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .trainerlist-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .trainerlist-container .table-container {
+    max-height: 365px;
+  }
+
+  .trainerlist-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .trainerlist-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .trainerlist-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .trainerlist-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+  .trainerlist-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .trainerlist-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .trainerlist-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .trainerlist-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .trainerlist-container .title1-container {
+    flex-direction: column;
+  }
+  .trainerlist-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .trainerlist-container .header-container {
+    gap: 12px;
+  }
+  .trainerlist-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .trainerlist-container .table-container {
+    max-height: 55vh;
+  }
+  .trainerlist-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .trainerlist-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .trainerlist-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .trainerlist-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .trainerlist-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+
+  .trainerlist-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .trainerlist-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .trainerlist-container .title-container {
+    margin: 1rem;
+  }
+
+  .trainerlist-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .trainerlist-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .trainerlist-container .title1-container {
+    flex-direction: column;
+  }
+  .trainerlist-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+/*--------------------------------------------------------------
+# Admin announement.php
+--------------------------------------------------------------*/
+
+.announcement-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.announcement-container .table-container::-webkit-scrollbar {
+  /* display: none; */
+}
+
+.announcement-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.announcement-container .responsive-table th,
+.announcement-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  white-space: nowrap; /*Add this line for sticky the thead*/
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.announcement-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  white-space: nowrap; /* Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.announcement-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.announcement-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.announcement-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.announcement-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.announcement-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.announcement-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.announcement-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.announcement-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.announcement-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.announcement-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.announcement-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.announcement-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.announcement-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.announcement-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 1rem;
+}
+.announcement-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+
+.announcement-container .recipient {
+  display: inline-block;
+  padding: 4px 8px;
+  margin-right: 4px;
+  border: 1px solid #3294c5;
+  border-radius: 4px;
+  background-color: #c5e2f2;
+}
+
+.announcement-container .remove-recipient {
+  cursor: pointer;
+  color: #999;
+  margin-left: 4px;
+}
+.announcement-container #suggestionsContainer {
+  position: relative;
+}
+
+.announcement-container #suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #c5e2f2;
+  border: 1px solid #3294c5;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.announcement-container #recipientsContainer {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .announcement-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .announcement-container .table-container {
+    max-height: 365px;
+  }
+
+  .announcement-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .announcement-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .announcement-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .announcement-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+  .announcement-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .announcement-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 5rem;
+  }
+
+  .announcement-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .announcement-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .announcement-container .title1-container {
+    flex-direction: column;
+  }
+  .announcement-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .announcement-container .header-container {
+    gap: 12px;
+  }
+  .announcement-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .announcement-container .table-container {
+    max-height: 55vh;
+  }
+  .announcement-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .announcement-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .announcement-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .announcement-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .announcement-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+
+  .announcement-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 4rem;
+  }
+
+  .announcement-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .announcement-container .title-container {
+    margin: 1rem;
+  }
+
+  .announcement-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .announcement-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .announcement-container .title1-container {
+    flex-direction: column;
+  }
+  .announcement-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+/*--------------------------------------------------------------
+# Admin import.php
+--------------------------------------------------------------*/
+div#swal2-html-container {
+  max-height: 300px;
+}
+div#swal2-html-container table {
+  display: flex;
+  justify-content: center;
+}
+.imports-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 58%;
+  overflow-y: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  scroll-behavior: smooth;
+}
+
+.imports-container .table-container::-webkit-scrollbar {
+  /* display: none; */
+}
+
+.imports-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.imports-container .responsive-table th,
+.imports-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.imports-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.imports-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.imports-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.imports-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imports-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.imports-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.imports-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 2rem 2rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.imports-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.imports-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.imports-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.imports-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  white-space: nowrap;
+}
+.imports-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.imports-container .table-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.imports-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.imports-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 0.5rem;
+}
+.imports-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .imports-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  /* .imports-container .table-container {
+    max-height: 365px;
+  } */
+
+  .imports-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .imports-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .imports-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .imports-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+  .imports-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .imports-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .imports-container .title-container {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    min-width: 300px;
+  }
+
+  .imports-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .imports-container .title1-container {
+    flex-direction: row;
+  }
+  .imports-container .title1-container input[type='file'] {
+    margin: 0 10px 0 0 !important;
+  }
+  .imports-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .imports-container .header-container {
+    gap: 0.5rem;
+  }
+  .imports-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  /* .imports-container .table-container {
+    max-height: 55vh;
+  } */
+  .imports-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .imports-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .imports-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .imports-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .imports-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+
+  .imports-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .imports-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .imports-container .title-container {
+    /* margin: 1rem; */
+  }
+
+  .imports-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .imports-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .imports-container .title1-container {
+    flex-direction: row;
+  }
+  .imports-container .header-container .search-container {
+    width: 50vw !important;
+  }
+  .imports-container .title1-container input[type='file'] {
+    margin: 0 10px 0 0 !important;
+    width: 50vw !important;
+  }
+  .imports-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+/*--------------------------------------------------------------
+# Admin faQuestion.php
+--------------------------------------------------------------*/
+
+.faQuestion-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.faQuestion-container .table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.faQuestion-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.faQuestion-container .responsive-table th,
+.faQuestion-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.faQuestion-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  white-space: nowrap; /* Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.faQuestion-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.faQuestion-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.faQuestion-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.faQuestion-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.faQuestion-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.faQuestion-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.faQuestion-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.faQuestion-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.faQuestion-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.faQuestion-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.faQuestion-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.faQuestion-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.faQuestion-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.faQuestion-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 1rem;
+}
+.faQuestion-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .faQuestion-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .faQuestion-container .table-container {
+    max-height: 365px;
+  }
+
+  .faQuestion-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .faQuestion-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .faQuestion-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .faQuestion-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+  .faQuestion-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .faQuestion-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 3rem;
+  }
+
+  .faQuestion-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .faQuestion-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .faQuestion-container .title1-container {
+    flex-direction: column;
+  }
+  .faQuestion-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .faQuestion-container .header-container {
+    gap: 12px;
+  }
+  .faQuestion-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .faQuestion-container .table-container {
+    max-height: 55vh;
+  }
+  .faQuestion-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .faQuestion-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .faQuestion-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .faQuestion-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .faQuestion-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+
+  .faQuestion-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 3rem;
+  }
+
+  .faQuestion-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .faQuestion-container .title-container {
+    margin: 1rem;
+  }
+
+  .faQuestion-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .faQuestion-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .faQuestion-container .title1-container {
+    flex-direction: column;
+  }
+  .faQuestion-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+/*--------------------------------------------------------------
+# Admin hero-page.php
+--------------------------------------------------------------*/
+
+.hero-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.hero-container .table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.hero-container .responsive-table th,
+.hero-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.hero-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  white-space: nowrap; /* Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.hero-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.hero-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.hero-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.hero-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.hero-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.hero-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.hero-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.hero-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.hero-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.hero-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.hero-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.hero-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 1rem;
+}
+.hero-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .hero-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .hero-container .table-container {
+    max-height: 365px;
+  }
+
+  .hero-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hero-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .hero-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+  .hero-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .hero-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 3rem;
+  }
+
+  .hero-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .hero-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .hero-container .title1-container {
+    flex-direction: column;
+  }
+  .hero-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero-container .header-container {
+    gap: 12px;
+  }
+  .hero-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .hero-container .table-container {
+    max-height: 55vh;
+  }
+  .hero-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hero-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .hero-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .hero-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+
+  .hero-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 3rem;
+  }
+
+  .hero-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .hero-container .title-container {
+    margin: 1rem;
+  }
+
+  .hero-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .hero-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .hero-container .title1-container {
+    flex-direction: column;
+  }
+  .hero-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+/*--------------------------------------------------------------
+# Admin about-page.php
+--------------------------------------------------------------*/
+
+.about-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.about-container .table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.about-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.about-container .responsive-table th,
+.about-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.about-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  white-space: nowrap; /* Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.about-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.about-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.about-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.about-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.about-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.about-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.about-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.about-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.about-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.about-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.about-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.about-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.about-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 1rem;
+}
+.about-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .about-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .about-container .table-container {
+    max-height: 365px;
+  }
+
+  .about-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .about-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .about-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .about-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+  .about-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .about-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 3rem;
+  }
+
+  .about-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .about-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .about-container .title1-container {
+    flex-direction: column;
+  }
+  .about-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-container .header-container {
+    gap: 12px;
+  }
+  .about-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .about-container .table-container {
+    max-height: 55vh;
+  }
+  .about-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .about-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .about-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .about-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .about-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+
+  .about-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 3rem;
+  }
+
+  .about-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .about-container .title-container {
+    margin: 1rem;
+  }
+
+  .about-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .about-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .about-container .title1-container {
+    flex-direction: column;
+  }
+  .about-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+/*--------------------------------------------------------------
+# Admin gallery-page.php
+--------------------------------------------------------------*/
+
+.gallery-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.gallery-container .table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.gallery-container .responsive-table th,
+.gallery-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.gallery-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  white-space: nowrap; /* Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.gallery-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.gallery-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.gallery-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.gallery-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.gallery-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.gallery-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.gallery-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.gallery-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.gallery-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.gallery-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.gallery-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.gallery-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 1rem;
+}
+.gallery-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .gallery-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .gallery-container .table-container {
+    max-height: 365px;
+  }
+
+  .gallery-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .gallery-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .gallery-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+  .gallery-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .gallery-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 3rem;
+  }
+
+  .gallery-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .gallery-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .gallery-container .title1-container {
+    flex-direction: column;
+  }
+  .gallery-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .gallery-container .header-container {
+    gap: 12px;
+  }
+  .gallery-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .gallery-container .table-container {
+    max-height: 55vh;
+  }
+  .gallery-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .gallery-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .gallery-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .gallery-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+
+  .gallery-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 3rem;
+  }
+
+  .gallery-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .gallery-container .title-container {
+    margin: 1rem;
+  }
+
+  .gallery-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .gallery-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .gallery-container .title1-container {
+    flex-direction: column;
+  }
+  .gallery-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+/*--------------------------------------------------------------
+# Admin team-page.php
+--------------------------------------------------------------*/
+
+.team-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.team-container .table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.team-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.team-container .responsive-table th,
+.team-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.team-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  white-space: nowrap; /* Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.team-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.team-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.team-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.team-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.team-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.team-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.team-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.team-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.team-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.team-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.team-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.team-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.team-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.team-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 0.5rem;
+}
+.team-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .team-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .team-container .table-container {
+    max-height: 365px;
+  }
+
+  .team-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .team-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .team-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .team-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+  .team-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .team-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 3rem;
+  }
+
+  .team-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .team-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .team-container .title1-container {
+    flex-direction: column;
+  }
+  .team-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .team-container .header-container {
+    gap: 12px;
+  }
+  .team-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .team-container .table-container {
+    max-height: 55vh;
+  }
+  .team-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .team-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .team-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .team-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .team-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+
+  .team-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 3rem;
+  }
+
+  .team-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .team-container .title-container {
+    margin: 1rem;
+  }
+
+  .team-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .team-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .team-container .title1-container {
+    flex-direction: column;
+  }
+  .team-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+/*--------------------------------------------------------------
+# Teacher studengroup.php
+--------------------------------------------------------------*/
+
+.studentgroup-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.studentgroup-container .table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.studentgroup-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.studentgroup-container .responsive-table th,
+.studentgroup-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.studentgroup-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.studentgroup-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.studentgroup-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.studentgroup-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.studentgroup-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.studentgroup-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.studentgroup-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.studentgroup-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.studentgroup-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.studentgroup-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.studentgroup-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.studentgroup-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.studentgroup-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.studentgroup-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.studentgroup-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 1rem;
+}
+.studentgroup-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .studentgroup-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .studentgroup-container .table-container {
+    max-height: 365px;
+  }
+
+  .studentgroup-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .studentgroup-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .studentgroup-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .studentgroup-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+  .studentgroup-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .studentgroup-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .studentgroup-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .studentgroup-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .studentgroup-container .title1-container {
+    flex-direction: column;
+  }
+  .studentgroup-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .studentgroup-container .header-container {
+    gap: 12px;
+  }
+  .studentgroup-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .studentgroup-container .table-container {
+    max-height: 55vh;
+  }
+  .studentgroup-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .studentgroup-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .studentgroup-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .studentgroup-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .studentgroup-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+
+  .studentgroup-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .studentgroup-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .studentgroup-container .title-container {
+    margin: 1rem;
+  }
+
+  .studentgroup-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .studentgroup-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .studentgroup-container .title1-container {
+    flex-direction: column;
+  }
+  .studentgroup-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+/*--------------------------------------------------------------
+# Teacher modulelist.php
+--------------------------------------------------------------*/
+
+.modulelist-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 0.5rem;
+  scroll-behavior: smooth;
+}
+
+.modulelist-container .table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.modulelist-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.modulelist-container .responsive-table th,
+.modulelist-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.modulelist-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.modulelist-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.modulelist-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.modulelist-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.modulelist-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.modulelist-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.modulelist-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.modulelist-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.modulelist-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.modulelist-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.modulelist-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.modulelist-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.modulelist-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.modulelist-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.modulelist-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 1rem;
+}
+.modulelist-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .modulelist-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .modulelist-container .table-container {
+    max-height: 365px;
+  }
+
+  .modulelist-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .modulelist-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .modulelist-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .modulelist-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+  .modulelist-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .modulelist-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .modulelist-container .title-container {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    min-width: 300px;
+  }
+
+  .modulelist-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .modulelist-container .title1-container {
+    flex-direction: column;
+  }
+  .modulelist-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .modulelist-container .header-container {
+    gap: 12px;
+  }
+  .modulelist-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .modulelist-container .table-container {
+    max-height: 55vh;
+  }
+  .modulelist-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .modulelist-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .modulelist-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .modulelist-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .modulelist-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+
+  .modulelist-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .modulelist-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .modulelist-container .title-container {
+    margin: 0.5rem;
+  }
+
+  .modulelist-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .modulelist-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .modulelist-container .title1-container {
+    flex-direction: column;
+  }
+  .modulelist-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+/*--------------------------------------------------------------
+# Teacher announelist.php
+--------------------------------------------------------------*/
+
+.announcelist-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.announcelist-container .table-container::-webkit-scrollbar {
+  /* display: none; */
+}
+
+.announcelist-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.announcelist-container .responsive-table th,
+.announcelist-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  white-space: nowrap; /*Add this line for sticky the thead*/
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.announcelist-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  white-space: nowrap; /* Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.announcelist-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.announcelist-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.announcelist-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.announcelist-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.announcelist-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.announcelist-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.announcelist-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.announcelist-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.announcelist-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.announcelist-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.announcelist-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.announcelist-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.announcelist-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.announcelist-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 1rem;
+}
+.announcelist-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+
+.announcelist-container .recipient {
+  display: inline-block;
+  padding: 4px 8px;
+  margin-right: 4px;
+  border: 1px solid #3294c5;
+  border-radius: 4px;
+  background-color: #c5e2f2;
+}
+
+.announcelist-container .remove-recipient {
+  cursor: pointer;
+  color: #999;
+  margin-left: 4px;
+}
+.announcelist-container #suggestionsContainer {
+  position: relative;
+}
+
+.announcelist-container #suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #c5e2f2;
+  border: 1px solid #3294c5;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.announcelist-container #recipientsContainer {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .announcelist-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .announcelist-container .table-container {
+    max-height: 365px;
+  }
+
+  .announcelist-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .announcelist-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .announcelist-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .announcelist-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+  .announcelist-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .announcelist-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 5rem;
+  }
+
+  .announcelist-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .announcelist-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .announcelist-container .title1-container {
+    flex-direction: column;
+  }
+  .announcelist-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .announcelist-container .header-container {
+    gap: 12px;
+  }
+  .announcelist-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .announcelist-container .table-container {
+    max-height: 55vh;
+  }
+  .announcelist-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .announcelist-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .announcelist-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .announcelist-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .announcelist-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+
+  .announcelist-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 4rem;
+  }
+
+  .announcelist-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .announcelist-container .title-container {
+    margin: 1rem;
+  }
+
+  .announcelist-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .announcelist-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .announcelist-container .title1-container {
+    flex-direction: column;
+  }
+  .announcelist-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+/*--------------------------------------------------------------
+# Student modulelist.php
+--------------------------------------------------------------*/
+
+.module-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.module-container .table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.module-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.module-container .responsive-table th,
+.module-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.module-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.module-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.module-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.module-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.module-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.module-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.module-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.module-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.module-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.module-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.module-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.module-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.module-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.module-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.module-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 0.5rem;
+}
+.module-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .module-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .module-container .table-container {
+    max-height: 365px;
+  }
+
+  .module-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .module-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .module-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .module-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+  .module-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .module-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .module-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .module-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .module-container .title1-container {
+    flex-direction: column;
+  }
+  .module-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .module-container .header-container {
+    gap: 10px;
+  }
+  .module-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .module-container .table-container {
+    max-height: 55vh;
+  }
+  .module-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .module-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .module-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .module-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .module-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: normal; /* Add this line for sticky the thead */
+  }
+
+  .module-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  .module-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .module-container .title-container {
+    margin: 0.5rem;
+  }
+
+  .module-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .module-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .module-container .title1-container {
+    flex-direction: row;
+    flex-direction: row-reverse;
+  }
+  .module-container .title1-container h2 {
+    font-size: 1.2rem;
+  }
+  .module-container .title1-container label {
+    font-size: 0.8rem;
+  }
+  .module-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+/*--------------------------------------------------------------
+# Student announce.php
+--------------------------------------------------------------*/
+
+.announce-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.announce-container .table-container::-webkit-scrollbar {
+  /* display: none; */
+}
+
+.announce-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.announce-container .responsive-table th,
+.announce-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  white-space: nowrap; /*Add this line for sticky the thead*/
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.announce-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  white-space: nowrap; /* Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.announce-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.announce-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.announce-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.announce-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.announce-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.announce-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.announce-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.announce-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.announce-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.announce-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.announce-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.announce-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.announce-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.announce-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 1rem;
+}
+.announce-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+
+.announce-container .recipient {
+  display: inline-block;
+  padding: 4px 8px;
+  margin-right: 4px;
+  border: 1px solid #3294c5;
+  border-radius: 4px;
+  background-color: #c5e2f2;
+}
+
+.announce-container .remove-recipient {
+  cursor: pointer;
+  color: #999;
+  margin-left: 4px;
+}
+.announce-container #suggestionsContainer {
+  position: relative;
+}
+
+.announce-container #suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #c5e2f2;
+  border: 1px solid #3294c5;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.announce-container #recipientsContainer {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .announce-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .announce-container .table-container {
+    max-height: 365px;
+  }
+
+  .announce-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .announce-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .announce-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .announce-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+  .announce-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .announce-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 5rem;
+  }
+
+  .announce-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .announce-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .announce-container .title1-container {
+    flex-direction: column;
+  }
+  .announce-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .announce-container .header-container {
+    gap: 12px;
+  }
+  .announce-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .announce-container .table-container {
+    max-height: 55vh;
+  }
+  .announce-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .announce-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .announce-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .announce-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .announce-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+
+  .announce-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 4rem;
+  }
+
+  .announce-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .announce-container .title-container {
+    margin: 1rem;
+  }
+
+  .announce-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .announce-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .announce-container .title1-container {
+    flex-direction: column;
+  }
+  .announce-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+/*--------------------------------------------------------------
+# Student attendance.php
+--------------------------------------------------------------*/
+
+.attendance-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+  max-height: 365px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  scroll-behavior: smooth;
+}
+
+.attendance-container .table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.attendance-container .responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  table-layout: fixed; /* Add this line for sticky the thead */
+}
+
+.attendance-container .responsive-table th,
+.attendance-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: center;
+  /* white-space: nowrap; Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.attendance-container .responsive-table td {
+  padding: 0.3rem;
+  text-align: left;
+  white-space: nowrap; /* Add this line for sticky the thead */
+  overflow: hidden; /* Add this line for sticky the thead */
+  text-overflow: ellipsis; /* Add this line for sticky the thead */
+}
+
+.attendance-container .responsive-table th {
+  /* background-color: #adb5bd; */
+  color: #e5f1f9;
+  position: sticky; /* Add this line for sticky the thead */
+  top: 0; /* Add this line for sticky the thead */
+  /* z-index: 1; Add this line for sticky the thead */
+  background-color: #3294c5;
+}
+.attendance-container .responsive-table td {
+  text-align: left;
+  font-weight: 500;
+}
+.attendance-container .responsive-table td:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.attendance-container .responsive-table tbody tr:nth-child(even) {
+  background-color: #e5f1f9;
+}
+.attendance-container .responsive-table tbody tr:nth-child(odd) {
+  background-color: #c5e2f2;
+}
+
+.attendance-container {
+  width: 100%;
+  margin: 0 1rem 1rem;
+  padding: 1rem 1rem;
+  height: calc(95vh - 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  border: 1px solid #58aed8;
+  background-color: #f2f9fd;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.attendance-container .group-id {
+  text-align: center;
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
+
+.attendance-container .header-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: fit-content;
+}
+.attendance-container span.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+  cursor: pointer;
+  background-image: url(../assets/img/xIcon2.png);
+}
+.attendance-container .title1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  white-space: nowrap;
+}
+.attendance-container .title1-container h2 {
+  font-size: 1.75rem;
+}
+.attendance-container .title1-container label {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+.attendance-container .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.attendance-container .title-container h2 {
+  font-size: 2.3rem;
+  color: #132c3e;
+  padding-bottom: 1rem;
+}
+.attendance-container .action-btn {
+  display: flex;
+  gap: 5px;
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .attendance-container {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .attendance-container .table-container {
+    max-height: 365px;
+  }
+
+  .attendance-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .attendance-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .attendance-container .responsive-table tr {
+    border: 1px solid #3294c5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+  }
+
+  .attendance-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+  .attendance-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .attendance-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 3rem;
+  }
+
+  .attendance-container .title-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    min-width: 300px;
+  }
+
+  .attendance-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .attendance-container .title1-container {
+    flex-direction: column;
+  }
+  .attendance-container .action-btn {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .attendance-container .header-container {
+    gap: 6px;
+  }
+  .attendance-container {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 1rem;
+  }
+  .attendance-container .table-container {
+    max-height: 50vh;
+  }
+  .attendance-container .responsive-table::-webkit-scrollbar {
+    display: none;
+  }
+
+  .attendance-container .responsive-table thead {
+    display: block;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .attendance-container .responsive-table td:last-child {
+    display: block;
+  }
+
+  .attendance-container .responsive-table tr {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+
+  .attendance-container .responsive-table td {
+    border: none;
+    display: inline-block;
+    text-align: right;
+    padding: 0.3rem;
+    font-size: 13px;
+    width: 100%; /* Add this line */
+    box-sizing: border-box; /* Add this line */
+    white-space: nowrap; /* Add this line for sticky the thead */
+  }
+
+  .attendance-container .responsive-table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 3rem;
+  }
+
+  .attendance-container .responsive-table tbody tr:nth-child(even) {
+    background-color: white;
+  }
+
+  .attendance-container .title-container {
+    margin: 1rem;
+  }
+
+  .attendance-container .title-container h2 {
+    font-size: 1.5rem;
+    padding: 0;
+  }
+
+  .attendance-container .title-container label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .attendance-container .title1-container {
+    flex-direction: column;
+  }
+  .attendance-container .action-btn {
+    justify-content: flex-end;
+  }
+  .attendance-container .schedule span,
+  .attendance-container .titles-container h6 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+/*--------------------------------------------------------------
+# Landing Page portal.php
+--------------------------------------------------------------*/
+
+.main-container {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 70px);
+  background-color: #e5f1f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 70px;
+}
+.form {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  /* width: 850px; */
+  width: 90%;
+  height: 600px;
+}
+.form .back {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* width: 100%; */
+  position: relative;
+  height: 100%;
+  background: #132c3e;
+  border-radius: 20px;
+  /* border: 2px solid #c5e2f2; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+}
+.form .back > div {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex: 1;
+}
+.form .back > div h2 {
+  color: #f5f5f5;
+}
+.form .back > div p {
+  color: #ccc;
+}
+.form .back > div button {
+  padding: 5px 10px;
+  border: 2px solid #1d5e87;
+  font-size: 15px;
+  font-weight: 600;
+  background: #e5f1f9;
+  color: #1d5e87;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+}
+.form .front {
+  position: absolute;
+  top: 50%;
+  left: 47%;
+  width: 50%;
+  height: 600px;
+  background: #f2f9fd;
+  border: 1px solid #1d5e87;
+  border-radius: 20px;
+  transition: all 500ms ease-in-out;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+}
+.form .front .signup {
+  display: none;
+}
+.form .front > div {
+  /* padding: 50px; */
+  text-align: center;
+  width: 90%;
+}
+.form .front .title {
+  font-size: 25px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+}
+.form .front .form-element {
+  position: relative;
+  margin: 15px 0px;
+}
+.form .front .form-element input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background: #e5f1f9;
+  border-radius: 30px;
+  /* border: none; */
+  border: 1px solid #58aed8;
+  outline: none;
+  box-sizing: border-box;
+  text-indent: 35px;
+}
+
+.form .front .form-element select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background: #e5f1f9;
+  border-radius: 30px;
+  /* border: none; */
+  border: 1px solid #58aed8;
+  outline: none;
+  box-sizing: border-box;
+  /* text-indent: 10px; */
+}
+.form .front .form-element i.fa {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #555;
+}
+.form .front .form-element button {
+  width: 100px;
+  padding: 10px 0px;
+  margin-top: 30px;
+  border-radius: 30px;
+  background: #2277a7;
+  color: #f5f5f5;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.form .front .form-element button:hover {
+  transform: scale(1.1);
+}
+.form .front .form-element button:active {
+  transform: scale(1.1);
+}
+.form .front button {
+  width: 100px;
+  padding: 10px 0px;
+  margin-top: 30px;
+  border-radius: 30px;
+  background: #e5f1f9;
+  color: #1d5e87;
+  border: 1px solid #1d5e87;
+  outline: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.form .front button:hover {
+  background: #1d5e87;
+  color: #e5f1f9;
+  border: 1px solid #e5f1f9;
+}
+.form .front .form-element a {
+  text-decoration: none;
+  color: #555;
+  font-size: 15px;
+  font-weight: 600;
+}
+.form.active .front {
+  left: 5%;
+}
+.form.active .front .signup {
+  display: block;
+}
+.form.active .front .signin {
+  display: none;
+}
+#show-signup-slide,
+#show-signin-slide {
+  display: none;
+}
+.error-message {
+  color: red;
+  font-size: 0.7em;
+}
+
+.invalid {
+  border: 1px solid red !important;
+}
+
+/* Custom styles for the select element */
+
+.s-hidden {
+  visibility: hidden;
+  padding-right: 10px;
+}
+
+.select {
+  width: 100%;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  border-radius: 20px;
+}
+
+.styledSelect {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #e5f1f9;
+  border: 1px solid #58aed8;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  text-indent: 13px;
+  align-items: center;
+  /* gap: 5px; */
+  padding: 0 5px;
+  font-size: 0.9rem;
+}
+
+.styledSelect:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-color: black transparent transparent transparent;
+  /* position: absolute;
+top: 9px;
+right: 6px; */
+}
+
+.styledSelect:active,
+.styledSelect.active {
+  background-color: #c5e2f2;
+}
+.swal2-shown .styledSelect:after,
+.swal2-shown .styledSelect {
+  display: none;
+  border: none;
+}
+
+.options {
+  display: none;
+  position: absolute;
+  max-height: 200px;
+  overflow-y: auto;
+  /* width: fit-content; */
+  top: 110%;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0 0;
+  padding: 0 0;
+  list-style: none;
+  border: 1px solid #58aed8;
+  background-color: #c5e2f2;
+  /* border-radius: 20px 20px 8px 8px; */
+  border-radius: 8px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+.options::-webkit-scrollbar {
+  display: none;
+}
+
+.options li {
+  padding: 0 6px;
+  margin: 0 0;
+  padding: 0 10px;
+}
+
+.options li:hover {
+  background-color: #9fd0ea;
+  color: white;
+}
+.signin-container,
+.register-contianer {
+  border: 1px solid #58aed8;
+  padding: 15px 10px;
+  border-radius: 8px;
+}
+#header a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  .form .back > div h2 {
+    font-size: 15px;
+  }
+  .form .back > div p {
+    font-size: 13px;
+    padding: 10px 0;
+  }
+  .form .back > div {
+    padding: 30px 10px 30px 0;
+  }
+  .form .front .title {
+    font-size: 25px;
+  }
+  .form .front > div {
+    padding: 50px 0;
+    width: 100%;
+  }
+  .form .front .input-container {
+    flex-wrap: wrap;
+    gap: 8px !important;
+  }
+  .studentnumbercomponent {
+    flex: initial !important;
+    width: 100%;
+  }
+  .form.active .front {
+    top: 5%;
+    right: 5%; /*Move the form to the right side*/
+    width: 90%;
+    transform: rotateY(180deg) translateX(0);
+  }
+  .form .front {
+    width: 90%;
+    left: 5%;
+    padding: 0 20px;
+    height: 90%;
+  }
+  .form .back {
+    display: none;
+  }
+
+  .form.active .front .signup {
+    display: block;
+    transform: rotateY(180deg);
+    padding-top: 15px;
+  }
+
+  .form.active .front .signin {
+    display: none;
+  }
+  .form .back button {
+    z-index: 999;
+  }
+  .slide {
+    display: none;
+  }
+  #show-signup-slide,
+  #show-signin-slide {
+    display: block;
+  }
+  /* .styledSelect, .options{
+width: 80%;
+} */
+  .styledSelect {
+    /* text-indent: 35px; */
+    font-size: 18px;
+  }
+  .signin-container,
+  .register-contianer {
+    /* padding: 15px 10px; */
+    border: none;
+    border-bottom: 2px solid #58aed8;
+    border-radius: 0;
+  }
+  .form .front .form-element {
+    margin: 8px 0;
+  }
+  .form .front .form-element button {
+    margin-top: 0;
+    padding: 5px 0;
+    width: 80px;
+  }
+  .form .front .form-element input,
+  .form .front .form-element select {
+    padding: 5px;
+  }
+  .form .front .form-element i.fa {
+    top: 10px;
+  }
+  #component-id,
+  .select {
+    width: 100%;
+  }
+  .form .front button {
+    margin-top: 10px;
+    width: 80px;
+    padding: 5px 0;
+  }
+  #show-signup-slide h2,
+  #show-signin-slide h2 {
+    font-size: 20px;
+    margin-top: 5px;
+  }
+  #show-signup-slide p,
+  #show-signin-slide p {
+    font-size: 15px;
+  }
+  #show-signup-slide h2,
+  #show-signin-slide h2,
+  #show-signup-slide p,
+  #show-signin-slide p {
+    margin-bottom: 5px;
+  }
+}

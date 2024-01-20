@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.0-alpha3",
+    "bootstrap-icons": "^1.10.5",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.7.5"
+  },
+  "devDependencies": {
+    "html5-qrcode": "^2.3.8"
+  }
+}

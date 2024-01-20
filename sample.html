@@ -1,0 +1,164 @@
+<div class="signup">
+    <div class="register-contianer">
+      <div class="title">Register</div>
+      <form  method="POST" id="myForm">
+      <div class="form-element">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="First Name" name="firstname" id="firstname"/>
+        <span id="firstname-error" class="error-message"></span>
+      </div>
+
+      <div class="form-element">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="Middle Name" name="middlename" id="middlename"/>
+        <span id="middlename-error" class="error-message"></span>
+      </div>
+
+      <div class="form-element">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="Surname" name="surname" id="surname"/>
+        <span id="surname-error" class="error-message"></span>
+      </div>
+      <div class="form-element">
+          <i class="fa fa-envelope"></i>
+          <input type="email" placeholder="CvSU Email" name="email" id="email"/>
+          <span id="email-error" class="error-message"></span>
+        </div>
+        <div class="form-element">
+          <div class="studentnumbercomponent" style="flex: 1;">
+            <i class="fa fa-hashtag"></i>
+            <input type="text" placeholder="Student Number" name="studentnumber" id="student-number"/>
+            <span id="student-number-error" class="error-message"></span>
+          </div>
+        </div>
+        <div class="form-element">
+        <div id="component-id">
+            <select id="component_id" name="component_id" class="custom-select" title="Choose a component">
+              <option value="" selected disabled hidden>Choose Component</option>
+              <?php
+                // Retrieve the list of components from the database
+                $component_query = "SELECT * FROM componenttable";
+                $component_result = mysqli_query($con, $component_query);
+                while ($component_row = mysqli_fetch_assoc($component_result)) {
+                  echo "<option value='".$component_row['component_id']."'>".$component_row['component_name']."</option>";
+                }
+              ?>
+            </select>
+            <span id="component-error" class="error-message"></span>
+          </div>
+        </div>
+        <div class="form-element">
+          <select class="form-control" id="year-level" name="yearlevel">
+            <option value="" selected disabled>Year Level</option>
+            <option value="1">First Year</option>
+            <option value="2">Second Year</option>
+            <option value="3">Third Year</option>
+            <option value="4">Fourth Year</option>
+          </select>
+          <span id="year-level-error" class="error-message"></span>
+        </div>
+        <div class="form-element">
+          <select class="form-control" id="course" name="course">
+            <option value="" selected disabled>Course</option>
+            <option value="Bachelor of Secondary Education">Bachelor of Secondary Education</option>
+            <option value="Bachelor of Technical Vocational Teacher Education">Bachelor of Technical Vocational Teacher Education (formerly Bachelor of Technical Teacher Education)</option>
+            <option value="BS Business Management">BS Business Management</option>
+            <option value="BS Computer Engineering">BS Computer Engineering</option>
+            <option value="BS Computer Science">BS Computer Science</option>
+            <option value="BS Electrical Engineering">BS Electrical Engineering</option>
+            <option value="BS Hospitality Management">BS Hospitality Management (formerly BS Hotel and Restaurant Management)</option>
+            <option value="BS Industrial Education">BS Industrial Education</option>
+            <option value="BS Industrial Technology">BS Industrial Technology (formerly Bachelor of Industrial Technology)</option>
+            <option value="BS Information Technology">BS Information Technology</option>
+            <option value="Teacher Certificate Program">Teacher Certificate Program</option>
+            <option value="Laboratory / Science High School">Laboratory / Science High School</option>
+          </select>
+          <span id="course-error" class="error-message"></span>
+        </div><div class="form-element">
+          <select class="form-control" id="sex" name="sex">
+            <option value="" selected disabled>Sex</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          <span id="sex-error" class="error-message"></span>
+        </div>
+
+        <div class="form-element">
+            <select class="form-control" id="birthday-month" name="birthday-month">
+              <option value="" selected disabled>Month</option>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <span id="birthday-month-error" class="error-message"></span>
+          </div>
+          <div class="form-element">
+            <select class="form-control" id="birthday-day" name="birthday-day">
+              <option value="" selected disabled>Day</option>
+            </select>
+            <span id="birthday-day-error" class="error-message"></span>
+          </div>
+          <div class="form-element">
+            <select class="form-control" id="birthday-year" name="birthday-year">
+              <option value="" selected disabled>Year</option>
+              <?php
+                $currentYear = date("Y");
+                for ($year = $currentYear; $year >= $currentYear - 100; $year--) {
+                  echo "<option value='".$year."'>".$year."</option>";
+                }
+              ?>
+            </select>
+            <span id="birthday-year-error" class="error-message"></span>
+          </div>
+
+
+
+        <div class="form-element">
+          <i class="fa fa-phone"></i>
+          <input type="text" placeholder="Contact Number" name="contactnumber" id="contact-number"/>
+          <span id="contact-number-error" class="error-message"></span>
+        </div>
+
+        <div class="form-element">
+            <i class="fa fa-house"></i>
+            <input type="text" placeholder="Street/Barangay" name="street_barangay" id="street-barangay"/>
+            <span id="street-barangay-error" class="error-message"></span>
+          </div>
+
+          <div class="form-element">
+            <input type="text" placeholder="City/Municipality" name="city_municipality" id="city-municipality"/>
+            <span id="city-municipality-error" class="error-message"></span>
+          </div>
+
+          <div class="form-element">
+            <input type="text" placeholder="Province" name="province" id="province"/>
+            <span id="province-error" class="error-message"></span>
+          </div>
+
+
+        <div class="form-element">
+          <i class="fa fa-key"></i>
+          <input type="password" placeholder="Password" name="password" id="password"/>
+          <span id="password-error" class="error-message"></span>
+        </div>
+        <div class="form-element">
+          <button type="submit" class="btn btn-primary" name="register">Register</button>
+        </div>
+      </form>
+    </div>
+    <div id="show-signin-slide">
+      <h2>Already Registered?</h2>
+      <p>Sign in to access your account</p>
+      <button >Sign in</button>
+    </div>
+  </div>
